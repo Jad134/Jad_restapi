@@ -10,3 +10,6 @@ class Todo(models.Model):
     description = models.CharField(max_length=30)
     created_at = models.DateField(default=datetime.date.today)
     user = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
+
+    def time_passed(self):
+        return self.user.username
